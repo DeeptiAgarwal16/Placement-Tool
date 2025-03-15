@@ -8,7 +8,7 @@ from data_processor import DataProcessor
 
 # Set page config
 st.set_page_config(
-    page_title="Placement Query AI",
+    page_title="Excel Query AI",
     page_icon="🎓",
     layout="wide"
 )
@@ -40,11 +40,11 @@ if 'insights' not in st.session_state:
 
 # Title with subtitle
 st.markdown("<h1 style='text-align: center;'>Placement Query AI</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; font-size: 16px;'>Upload your placement data Excel file and ask questions in natural language.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 16px;'>Upload your Excel file and ask questions in natural language.</p>", unsafe_allow_html=True)
 
 # Sidebar: File Upload
 with st.sidebar:
-    st.header("📂 Upload Placement Data")
+    st.header("📂 Upload Excel Data")
     uploaded_file = st.file_uploader("Choose an Excel file", type=["xlsx", "xls"])
 
     if uploaded_file is not None:
