@@ -39,7 +39,7 @@ if 'insights' not in st.session_state:
     st.session_state.insights = None
 
 # Title with subtitle
-st.markdown("<h1 style='text-align: center;'>Placement Query AI</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Excel Query AI</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; font-size: 16px;'>Upload your Excel file and ask questions in natural language.</p>", unsafe_allow_html=True)
 
 # Sidebar: File Upload
