@@ -8,7 +8,7 @@ from data_processor import DataProcessor
 
 # Set page config
 st.set_page_config(
-    page_title="Excel Query AI",
+    page_title="Placement Query AI",
     page_icon="🎓",
     layout="wide"
 )
@@ -39,12 +39,12 @@ if 'insights' not in st.session_state:
     st.session_state.insights = None
 
 # Title with subtitle
-st.markdown("<h1 style='text-align: center;'>Excel Query AI</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; font-size: 16px;'>Upload your Excel file and ask questions in natural language.</p>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Placement Query AI</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 16px;'>Upload your placement data Excel file and ask questions in natural language.</p>", unsafe_allow_html=True)
 
 # Sidebar: File Upload
 with st.sidebar:
-    st.header("📂 Upload Excel Data")
+    st.header("📂 Upload Placement Data")
     uploaded_file = st.file_uploader("Choose an Excel file", type=["xlsx", "xls"])
 
     if uploaded_file is not None:
@@ -68,15 +68,6 @@ with st.sidebar:
             for query in st.session_state.query_history[-5:]:
                 st.markdown(f"- {query}")
 
-# Updated sample queries to match required query formats
-sample_queries = [
-    "Fetch the records of section 'A' who have a package above 10 LPA",
-    "Compare placement record of Section A and Section B based on various parameters",
-    "Please correlate and plot between percentage of 10th, 12th and B.Tech and placement status",
-    "Based on placement statistics, why are students not getting placed and where is scope for improvement?",
-    "Show students with lowest CGPA who still got placed",
-    "What factors contribute most to higher placement packages?"
-]
 
 # Query input with suggestions
 st.subheader("Ask a Query")
@@ -84,11 +75,12 @@ query = st.text_input("Enter your query", key="query_input")
 
 col1, col2 = st.columns([3, 1])
 with col1:
-    if query:
-        filtered_suggestions = [s for s in sample_queries if query.lower() in s.lower()]
-        if filtered_suggestions:
-            selected_suggestion = st.selectbox("💡 Suggested Queries", filtered_suggestions, index=0)
-            query = selected_suggestion  # Auto-fill query input
+    # if query:
+    #     filtered_suggestions = [s for s in sample_queries if query.lower() in s.lower()]
+    #     if filtered_suggestions:
+    #         selected_suggestion = st.selectbox("💡 Suggested Queries", filtered_suggestions, index=0)
+    #         query = selected_suggestion  # Auto-fill query input
+    pass
 
 with col2:
     run_query = st.button("Run Query", use_container_width=True)

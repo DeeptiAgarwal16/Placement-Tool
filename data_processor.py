@@ -164,14 +164,14 @@ class DataProcessor:
         """Create visualization based on the type specified"""
         try:
             # Handle dictionary input for graph directly
-            if isinstance(df, dict):
-                if graph_type == "pie":
-                    labels = list(df.keys())
-                    values = list(df.values())
-                    fig = px.pie(names=labels, values=values, title=title)
-                    return fig
-                else:
-                    df = pd.DataFrame(list(df.items()), columns=['Category', 'Value'])
+            # if isinstance(df, dict):
+            #     if graph_type == "pie":
+            #         labels = list(df.keys())
+            #         values = list(df.values())
+            #         fig = px.pie(names=labels, values=values, title=title)
+            #         return fig
+            #     else:
+            #         df = pd.DataFrame(list(df.items()), columns=['Category', 'Value'])
             
             # Enhanced visualization options
             if graph_type == "bar":
@@ -269,12 +269,15 @@ class DataProcessor:
         except Exception as e:
             # Create a simple figure with an error message
             fig = go.Figure()
-            fig.add_annotation(
-                text=f"Error creating visualization: {str(e)}",
-                xref="paper", yref="paper",
-                x=0.5, y=0.5, showarrow=False
-            )
+            fig = px.bar(df, x=df.iloc[:, 0], y=df.iloc[:, 1], title=title)
+            # fig.add_annotation(
+            #     text=f"Error creating visualization: {str(e)}",
+            #     xref="paper", yref="paper",
+            #     x=0.5, y=0.5, showarrow=False
+            # )
             return fig
+
+
     
     def generate_excel(self, df):
         """Generate Excel file from dataframe"""

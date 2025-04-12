@@ -140,9 +140,9 @@ class GeminiQueryProcessor:
             base_prompt += """
             This is a correlation analysis query. Make sure to:
             1. Calculate correlation coefficients between academic parameters (10th, 12th, B.Tech percentages) and placement outcomes
-            2. Prepare scatter plots or heatmaps to visualize correlations
+            2. Prepare heatmap to visualize correlations
             3. Consider calculating separate correlations for different groups (e.g., by section)
-            4. Include code to create appropriate visualization of correlations
+            4. Include code to create appropriate visualization of correlations but make sure to output a single graph
             5. Use pandas' corr() method and plotly visualization libraries appropriately
             """
         
@@ -336,10 +336,10 @@ class GeminiQueryProcessor:
             
             Provide a comprehensive analysis with these sections:
             
-            1. **Key Findings**: 3-4 major insights from the data analysis
+            1. **Key Findings**: 3 major insights from the data analysis
             2. **Root Causes**: Identify potential reasons for the placement outcomes based on the data
-            3. **Areas for Improvement**: 3-5 specific areas where improvements could lead to better placement outcomes
-            4. **Actionable Recommendations**: 4-6 concrete, specific recommendations for:
+            3. **Areas for Improvement**: 3 specific areas where improvements could lead to better placement outcomes
+            4. **Actionable Recommendations**: 3 concrete, specific recommendations for:
                - Students trying to improve their placement prospects
                - Institution/department to better prepare students
                - Addressing skill gaps or other issues identified
@@ -361,7 +361,7 @@ class GeminiQueryProcessor:
             Provide a concise analysis with these sections:
             
             1. **Summary**: 2-3 sentence summary of the key findings
-            2. **Key Insights**: 3-4 specific insights derived from this data
+            2. **Key Insights**: 3 specific insights derived from this data
             3. **Implications**: What these findings might mean for students or the institution
             
             Format your response using Markdown with proper headings, bullet points, and emphasis where appropriate.
